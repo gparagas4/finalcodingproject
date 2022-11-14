@@ -2,7 +2,7 @@ let y = 0;
 let speed = 3;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(900, 900);
 }
 
 function draw() {
