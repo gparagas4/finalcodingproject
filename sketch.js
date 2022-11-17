@@ -3,7 +3,8 @@ myRandom = 80;
 let y = 0 
 let speed = 3;
 let isRed = false;
-let isPurple = false
+let isPurple = false;
+let isBrown = false;
 
 function setup() {
   createCanvas(1500,730);
@@ -15,7 +16,7 @@ function draw() {
   background("black");
 
   if (myCounter < myRandom) {
-    fill(220)
+    fill("white")
   }else {
     fill("gold")
   }
@@ -69,25 +70,25 @@ function draw() {
 
   if(y > height || y < 0) {
     speed*= -1;
-  }
   
-  //Purple Blue Circle  
 
-  if(frameCount % 80 ==0){
-    isPurple = ! isPurple;
+  }
+   // Brown White Circle  
+
+   if(frameCount % 90 == 5){
+    isBrown = ! isBrown;
   }
 
-  if(isPurple) {
-    fill("purple");
+  if(isBrown) {
+    fill("Brown");
   } else{
-    fill("blue");
+    fill("white");
   }
   y+=speed;
-  rect(height/4, y, 70, 70, 70);
+  rect(height/2, y, 50, 50);
 
   if(y > height || y < 0) {
     speed*= -1;
   }
-  
 
 }
