@@ -1,12 +1,19 @@
 myCounter = 220;
 myRandom = 80;
+let y = 0 
+let speed = 3;
+let isRed = false;
+let isPurple = false
 
 function setup() {
   createCanvas(1500,730);
+  rectMode(CENTER);
+
 }
 
 function draw() {
   background("black");
+
   if (myCounter < myRandom) {
     fill(220)
   }else {
@@ -46,7 +53,41 @@ function draw() {
     myCounter = 0
     myRandom = random(10,90);
   }
+  //GREEN RED BOX 
+
+  if(frameCount % 60 ==0){
+    isRed = ! isRed;
+  }
+
+  if(isRed) {
+    fill("Red");
+  } else{
+    fill("Green");
+  }
+  y+=speed;
+  rect(width/2, y, 40, 40);
+
+  if(y > height || y < 0) {
+    speed*= -1;
+  }
   
+  //Purple Blue Circle  
+
+  if(frameCount % 80 ==0){
+    isPurple = ! isPurple;
+  }
+
+  if(isPurple) {
+    fill("purple");
+  } else{
+    fill("blue");
+  }
+  y+=speed;
+  rect(height/4, y, 70, 70, 70);
+
+  if(y > height || y < 0) {
+    speed*= -1;
+  }
+  
+
 }
-
-
