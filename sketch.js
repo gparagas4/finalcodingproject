@@ -4,17 +4,22 @@ let y = 0
 let speed = 3;
 let isRed = false;
 let isPurple = false;
-let isBrown = false;
+let img;
 
+
+function preload() {
+  img = loadImage("assets/VotingBallot.png")
+}
 function setup() {
   createCanvas(1500,730);
   rectMode(CENTER);
-
+  image(img, 0, 0);
+  
 }
 
 function draw() {
   background("black");
-
+  image (img, 0, 0)
   if (myCounter < myRandom) {
     fill("white")
   }else {
@@ -76,13 +81,13 @@ function draw() {
    // Brown White Circle  
 
    if(frameCount % 90 == 5){
-    isBrown = ! isBrown;
+    isPurple = ! isPurple;
   }
 
-  if(isBrown) {
-    fill("Brown");
+  if(isPurple) {
+    fill("Purple");
   } else{
-    fill("white");
+    fill("Blue");
   }
   y+=speed;
   rect(height/2, y, 50, 50);
@@ -90,5 +95,6 @@ function draw() {
   if(y > height || y < 0) {
     speed*= -1;
   }
+
 
 }
