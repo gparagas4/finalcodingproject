@@ -4,97 +4,58 @@ let y = 0
 let speed = 3;
 let isRed = false;
 let isPurple = false;
-let img;
+let div;
 
 
-function preload() {
-  img = loadImage("assets/VotingBallot.png")
-}
 function setup() {
-  createCanvas(1500,730);
-  rectMode(CENTER);
-  image(img, 0, 0);
-  
-}
+  createCanvas(1100, 1000);
+  angleMode('DEGREES');
+  angleMode
+   //vote now text
+   div = createDiv("VOTE NOW")
+   div.class('neonText')
+   div.style("font-size", "100px")
+   div.position(1250, 100)
 
+     //vote now text
+    div = createDiv("FOR THE FUTURE")
+    div.class('neonText')
+    div.style("font-size", "100px")
+    div.position(1100,1200)
+
+    //clock 
+   translate(1000, 1000);
+   rotate(-90);
+     let hr = hour();
+     let mn = minute();
+     let sc = second();
+     
+     fill(255);
+     noStroke();
+     text(hr +':'+ mn + ':' +sc, 10,200);
+     
+ 
+     strokeWeight(80);
+     stroke(255, 100, 150);
+     noFill();
+     let secondAngle = map(sc, 0, 59, 0, 360); 
+     arc (0, 0, 1800,1800, 0, secondAngle);
+ 
+     stroke(150, 100, 255);
+     let minAngle = map(mn, 0, 59, 0, 360);
+     arc(0, 0, 1600, 1600, 0, minAngle);
+ 
+     stroke(150, 255, 100);
+     let hourAngle = map(hr % 12, 0, 12, 0, 360); 
+     arc (0, 0, 1400, 1400, 0, hourAngle);
+
+
+}
 function draw() {
   background("black");
-  image (img, 0, 0)
-  if (myCounter < myRandom) {
-    fill("white")
-  }else {
-    fill("gold")
-  }
-  textSize(150);
-  textFont('Times New Roman');
-  text('VOTE', 250, 200);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('NOW', 700, 200);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('for', 450, 325);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('the', 700, 325);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('future', 210, 460);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('of', 580, 460);
-
-  textSize (150);
-  textFont('Times New Roman');
-  text('America', 720, 460);
 
 
-  myCounter++
-  if(myCounter >100){
-    myCounter = 0
-    myRandom = random(10,90);
-  }
-  //GREEN RED BOX 
 
-  if(frameCount % 60 ==0){
-    isRed = ! isRed;
-  }
-
-  if(isRed) {
-    fill("Red");
-  } else{
-    fill("Green");
-  }
-  y+=speed;
-  rect(width/2, y, 40, 40);
-
-  if(y > height || y < 0) {
-    speed*= -1;
-  
-
-  }
-   // Brown White Circle  
-
-   if(frameCount % 90 == 5){
-    isPurple = ! isPurple;
-  }
-
-  if(isPurple) {
-    fill("Purple");
-  } else{
-    fill("Blue");
-  }
-  y+=speed;
-  rect(height/2, y, 50, 50);
-
-  if(y > height || y < 0) {
-    speed*= -1;
-  }
 
 
 }
