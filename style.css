@@ -9,7 +9,7 @@ canvas {
 
 .neonText {
   animation: flicker 1.5s infinite alternate;
-  color: #fff;
+  color: rgb(246, 172, 52);
 }
 
 h1 {
