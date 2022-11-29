@@ -7,7 +7,7 @@ angleMode = ('DEGREES');
 let img;
 
 function preload () {
-img = loadImage("votingimage.jpeg")
+img = loadImage("Voting Ballot.jpg")
 }
 
 function setup() {
@@ -29,13 +29,15 @@ function setup() {
      div = createDiv("TIME'S TICKING")
      div.class('neonText')
      div.style("font-size", "20px")
-     div.position(300 ,500)
+     div.position(250 ,500)
 
 
 }
 function draw() {
   background("BLACK");
-  image(img, 1100, 300);
+  image(img, 10, 0);
+  image(img, 1250, 0);
+  
 
   translate(1000, 1000);
 
