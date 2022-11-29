@@ -4,7 +4,11 @@ let y = 0
 let speed = 3;
 rectMode = ("CENTER");
 angleMode = ('DEGREES');
+let img;
 
+function preload () {
+img = loadImage("votingimage.jpeg")
+}
 
 function setup() {
   createCanvas(1700, 1000);
@@ -31,7 +35,11 @@ function setup() {
 }
 function draw() {
   background("BLACK");
+  image(img, 1100, 300);
+
   translate(1000, 1000);
+
+
     rotate(-90);
       let hr = hour();
       let mn = minute();
