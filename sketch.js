@@ -25,7 +25,7 @@ function setup() {
      div = createDiv("TIME'S TICKING")
      div.class('neonText')
      div.style("font-size", "20px")
-     div.position(30 ,500)
+     div.position(300 ,500)
 
 
 }
